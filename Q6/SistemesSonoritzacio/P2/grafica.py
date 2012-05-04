@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+'''
+Author:  Marc Pomar Torres - P2 - Sistemes de Sornorització
+Desc:    Genera una gráfica con los resultados medidos en los acelerómetros
+'''
 import array
 import numpy
 import pylab

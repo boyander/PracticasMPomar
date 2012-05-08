@@ -8,6 +8,7 @@ Desc:    Genera una gráfica con los resultados medidos en los acelerómetros
 import array
 import numpy
 import pylab
+import operator
 
 freq = (6.05, 7.03, 8.01, 8.98, 9.96, 10.94, 11.91, 13.09, 15.04, 16.99,
 		 18.95, 21.09, 22.07, 23.05, 24.02, 25, 25.98, 26.95, 28.91, 31.05)
@@ -23,6 +24,17 @@ def main():
 	pylab.ylabel('dB')
 	pylab.legend(('Acc1','Acc2',), loc='best')
 	fig.savefig("grafica.png")
-	pylab.show()
+	
+	pylab.clf()
+	
+	fig2 = pylab.gcf()
+        pylab.plot(freq,tuple(map(operator.div,acc1,acc2)))
+        pylab.xlabel('Frecuencia (Hz)')
+        pylab.ylabel('C')
+        pylab.legend(('Acc1/Acc2',), loc='best')
+        fig2.savefig("grafica_x1_divided_x2.png")
+	
+
+
 
 if __name__ == "__main__": main()

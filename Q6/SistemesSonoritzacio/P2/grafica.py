@@ -28,11 +28,11 @@ def main():
 	pylab.clf()
 	
 	fig2 = pylab.gcf()
-        pylab.plot(freq,tuple(map(operator.div,acc1,acc2)))
+        pylab.plot(freq,tuple(map(operator.div,acc2,acc1)))
         pylab.xlabel('Frecuencia (Hz)')
         pylab.ylabel('C')
-        pylab.legend(('Acc1/Acc2',), loc='best')
-        fig2.savefig("grafica_x1_divided_x2.png")
+        pylab.legend(('Acc2/Acc1',), loc='best')
+        fig2.savefig("grafica_x2_x1.png")
 	
 
 
